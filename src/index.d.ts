@@ -74,6 +74,7 @@ export interface MenuItemProps {
     readonly onSelect?: (eventKey: number) => void;
     readonly eventKey?: number;
     readonly header?: boolean;
+    readonly hidden?: boolean;
     readonly disabled?: boolean;
     readonly divider?: boolean;
     readonly active?: boolean;

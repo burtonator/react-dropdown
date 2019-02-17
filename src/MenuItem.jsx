@@ -31,6 +31,9 @@ class MenuItem extends Component {
         // Style the menu item as a header label, useful for describing a group of menu items.
         header: PropTypes.bool,
 
+        // when true the menu item is not shown.
+        hidden: PropTypes.bool,
+
         // Callback fired when the menu item is clicked, even if it is disabled.
         onClick: PropTypes.func,
 
@@ -51,6 +54,7 @@ class MenuItem extends Component {
         disabled: false,
         divider: false,
         header: false,
+        hidden: false,
 
         // DropdownMenu
         open: false,
@@ -84,6 +88,7 @@ class MenuItem extends Component {
             divider,
             eventKey, // eslint-disable-line
             header,
+            hidden,
             onClick,
 
             // Dropdown
@@ -94,10 +99,15 @@ class MenuItem extends Component {
             rootCloseEvent,
 
             className,
-            style,
             children,
             ...props
         } = this.props;
+
+        const style = this.props.style || {};
+
+        if (hidden) {
+            style.display = 'none';
+        }
 
         if (divider) {
             // Forcibly blank out the children; separators shouldn't render any.
