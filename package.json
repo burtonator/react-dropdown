@@ -3,6 +3,7 @@
   "version": "1.3.0",
   "description": "React Dropdown component",
   "main": "lib/index.js",
+  "types": "./src/index.d.ts",
   "files": [
     "dist",
     "lib"
